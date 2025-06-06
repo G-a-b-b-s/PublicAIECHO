@@ -1,0 +1,34 @@
+=== Test Results ===
+Certainty (Standard Deviation) across folds: 0.07268638908863068
+
+Per sample AUC: 0.9996560489732622 
+
+[[ 584    0    0    0]
+ [   0 1468    6   15]
+ [   0    0 1251    0]
+ [   0    1    0  545]] 
+
+Class 0 → Sensitivity (Recall): 1.00, Specificity: 1.00
+Class 1 → Sensitivity (Recall): 0.99, Specificity: 1.00
+Class 2 → Sensitivity (Recall): 1.00, Specificity: 1.00
+Class 3 → Sensitivity (Recall): 1.00, Specificity: 1.00
+
+Overall Accuracy: 0.99
+
+###################################
+
+Per patient AUC: 0.9999507340141319 
+
+[[ 46   0   0   0]
+ [  0 139   1   1]
+ [  0   0 117   0]
+ [  0   0   0  51]] 
+
+Class 0 → Sensitivity (Recall): 1.00, Specificity: 1.00
+Class 1 → Sensitivity (Recall): 0.99, Specificity: 1.00
+Class 2 → Sensitivity (Recall): 1.00, Specificity: 1.00
+Class 3 → Sensitivity (Recall): 1.00, Specificity: 1.00
+
+Overall Accuracy: 0.99
+
+
