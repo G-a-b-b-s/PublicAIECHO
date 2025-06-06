@@ -1,0 +1,1042 @@
+t0012
+t0012
+t0012
+t0012
+t0012
+t0012
+t0012
+t0012
+t0012
+t0012
+
+Modules based on Lua: Version 8.5.8  2021-06-30 14:16 -05:00
+    by Robert McLay mclay@tacc.utexas.edu
+
+module [options] sub-command [args ...]
+
+Help sub-commands:
+------------------
+  help                              prints this message
+  help                module [...]  print help message from module(s)
+
+Loading/Unloading sub-commands:
+-------------------------------
+  load | add          module [...]  load module(s)
+  try-load | try-add  module [...]  Add module(s), do not complain if not
+                                    found
+  del | unload        module [...]  Remove module(s), do not complain if not
+                                    found
+  swap | sw | switch  m1 m2         unload m1 and load m2
+  purge                             unload all modules
+  refresh                           reload aliases from current list of
+                                    modules.
+  update                            reload all currently loaded modules.
+
+Listing / Searching sub-commands:
+---------------------------------
+  list                              List loaded modules
+  list                s1 s2 ...     List loaded modules that match the
+                                    pattern
+  avail | av                        List available modules
+  avail | av          string        List available modules that contain
+                                    "string".
+  spider                            List all possible modules
+  spider              module        List all possible version of that module
+                                    file
+  spider              string        List all module that contain the
+                                    "string".
+  spider              name/version  Detailed information about that version
+                                    of the module.
+  whatis              module        Print whatis information about module
+  keyword | key       string        Search all name and whatis that contain
+                                    "string".
+
+Searching with Lmod:
+--------------------
+  All searching (spider, list, avail, keyword) support regular expressions:
+  
+
+  -r spider           '^p'          Finds all the modules that start with
+                                    `p' or `P'
+  -r spider           mpi           Finds all modules that have "mpi" in
+                                    their name.
+  -r spider           'mpi$         Finds all modules that end with "mpi" in
+                                    their name.
+
+Handling a collection of modules:
+--------------------------------
+  save | s                          Save the current list of modules to a
+                                    user defined "default" collection.
+  save | s            name          Save the current list of modules to
+                                    "name" collection.
+  reset                             The same as "restore system"
+  restore | r                       Restore modules from the user's
+                                    "default" or system default.
+  restore | r         name          Restore modules from "name" collection.
+  restore             system        Restore module state to system defaults.
+  savelist                          List of saved collections.
+  describe | mcc      name          Describe the contents of a module
+                                    collection.
+  disable             name          Disable (i.e. remove) a collection.
+
+Deprecated commands:
+--------------------
+  getdefault          [name]        load name collection of modules or
+                                    user's "default" if no name given.
+                                    ===> Use "restore" instead <====
+  setdefault          [name]        Save current list of modules to name if
+                                    given, otherwise save as the default
+                                    list for you the user.
+                                    ===> Use "save" instead. <====
+
+Miscellaneous sub-commands:
+---------------------------
+  is-loaded           modulefile    return a true status if module is loaded
+  is-avail            modulefile    return a true status if module can be
+                                    loaded
+  show                modulefile    show the commands in the module file.
+  use [-a]            path          Prepend or Append path to MODULEPATH.
+  unuse               path          remove path from MODULEPATH.
+  tablelist                         output list of active modules as a lua
+                                    table.
+
+Important Environment Variables:
+--------------------------------
+  LMOD_COLORIZE                     If defined to be "YES" then Lmod prints
+                                    properties and warning in color.
+
+    --------------------------------------------------------------------------
+
+Lmod Web Sites
+
+  Documentation:    http://lmod.readthedocs.org
+  GitHub:           https://github.com/TACC/Lmod
+  SourceForge:      https://lmod.sf.net
+  TACC Homepage:    https://www.tacc.utexas.edu/research-development/tacc-projects/lmod
+
+  To report a bug please read http://lmod.readthedocs.io/en/latest/075_bug_reporting.html
+    --------------------------------------------------------------------------
+
+
+INFO:timm.models._builder:Loading pretrained weights from Hugging Face hub (timm/efficientnet_b4.ra2_in1k)
+INFO:timm.models._hub:[timm/efficientnet_b4.ra2_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+INFO:timm.models._builder:Converted input conv conv_stem pretrained weights from 3 to 30 channel(s)
+INFO:timm.models._builder:Missing keys (classifier.weight, classifier.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+INFO:timm.models._builder:Loading pretrained weights from Hugging Face hub (timm/resnet34.a1_in1k)
+INFO:timm.models._hub:[timm/resnet34.a1_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+INFO:timm.models._builder:Converted input conv conv1 pretrained weights from 3 to 30 channel(s)
+INFO:timm.models._builder:Missing keys (fc.weight, fc.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+INFO:timm.models._builder:Loading pretrained weights from Hugging Face hub (timm/resnet101.a1h_in1k)
+INFO:timm.models._hub:[timm/resnet101.a1h_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+INFO:timm.models._builder:Converted input conv conv1 pretrained weights from 3 to 30 channel(s)
+INFO:timm.models._builder:Missing keys (fc.weight, fc.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+INFO:timm.models._builder:Loading pretrained weights from Hugging Face hub (timm/inception_v3.tv_in1k)
+INFO:timm.models._hub:[timm/inception_v3.tv_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+INFO:timm.models._builder:Converted input conv Conv2d_1a_3x3.conv pretrained weights from 3 to 30 channel(s)
+INFO:timm.models._builder:Missing keys (fc.weight, fc.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+============================MODEL EfficentNetB4============================
+Starting Fold 1/5
+Epoch 1
+Train Loss: 1.1800
+Validation AUC: 0.7729
+Best model saved with AUC: 0.7729
+Epoch 2
+Train Loss: 0.8296
+Validation AUC: 0.8447
+Best model saved with AUC: 0.8447
+Epoch 3
+Train Loss: 0.6238
+Validation AUC: 0.8935
+Best model saved with AUC: 0.8935
+Epoch 4
+Train Loss: 0.4728
+Validation AUC: 0.9163
+Best model saved with AUC: 0.9163
+Epoch 5
+Train Loss: 0.3377
+Validation AUC: 0.9457
+Best model saved with AUC: 0.9457
+Epoch 6
+Train Loss: 0.3005
+Validation AUC: 0.9670
+Best model saved with AUC: 0.9670
+Epoch 7
+Train Loss: 0.2195
+Validation AUC: 0.9700
+Best model saved with AUC: 0.9700
+Epoch 8
+Train Loss: 0.1531
+Validation AUC: 0.9650
+Epoch 9
+Train Loss: 0.1389
+Validation AUC: 0.9855
+Best model saved with AUC: 0.9855
+Epoch 10
+Train Loss: 0.1187
+Validation AUC: 0.9770
+Epoch 11
+Train Loss: 0.0935
+Validation AUC: 0.9838
+Epoch 12
+Train Loss: 0.0888
+Validation AUC: 0.9825
+Epoch 13
+Train Loss: 0.0752
+Validation AUC: 0.9886
+Best model saved with AUC: 0.9886
+Epoch 14
+Train Loss: 0.0635
+Validation AUC: 0.9925
+Best model saved with AUC: 0.9925
+Epoch 15
+Train Loss: 0.0595
+Validation AUC: 0.9792
+Epoch 16
+Train Loss: 0.0565
+Validation AUC: 0.9867
+Epoch 17
+Train Loss: 0.0473
+Validation AUC: 0.9779
+Epoch 18
+Train Loss: 0.0468
+Validation AUC: 0.9814
+Early stopping triggered.
+Starting Fold 2/5
+Epoch 1
+Train Loss: 0.0500
+Validation AUC: 0.9862
+Best model saved with AUC: 0.9862
+Epoch 2
+Train Loss: 0.0530
+Validation AUC: 0.9939
+Best model saved with AUC: 0.9939
+Epoch 3
+Train Loss: 0.0326
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 4
+Train Loss: 0.0280
+Validation AUC: 0.9913
+Epoch 5
+Train Loss: 0.0307
+Validation AUC: 0.9892
+Epoch 6
+Train Loss: 0.0322
+Validation AUC: 0.9722
+Epoch 7
+Train Loss: 0.0222
+Validation AUC: 0.9943
+Early stopping triggered.
+Starting Fold 3/5
+Epoch 1
+Train Loss: 0.0209
+Validation AUC: 0.9921
+Best model saved with AUC: 0.9921
+Epoch 2
+Train Loss: 0.0181
+Validation AUC: 0.9824
+Epoch 3
+Train Loss: 0.0247
+Validation AUC: 0.9870
+Epoch 4
+Train Loss: 0.0240
+Validation AUC: 0.9903
+Epoch 5
+Train Loss: 0.0242
+Validation AUC: 0.9918
+Early stopping triggered.
+Starting Fold 4/5
+Epoch 1
+Train Loss: 0.0295
+Validation AUC: 0.9903
+Best model saved with AUC: 0.9903
+Epoch 2
+Train Loss: 0.0205
+Validation AUC: 0.9971
+Best model saved with AUC: 0.9971
+Epoch 3
+Train Loss: 0.0194
+Validation AUC: 0.9958
+Epoch 4
+Train Loss: 0.0155
+Validation AUC: 0.9959
+Epoch 5
+Train Loss: 0.0187
+Validation AUC: 0.9986
+Best model saved with AUC: 0.9986
+Epoch 6
+Train Loss: 0.0165
+Validation AUC: 0.9972
+Epoch 7
+Train Loss: 0.0168
+Validation AUC: 0.9972
+Epoch 8
+Train Loss: 0.0191
+Validation AUC: 0.9971
+Epoch 9
+Train Loss: 0.0192
+Validation AUC: 0.9972
+Early stopping triggered.
+Starting Fold 5/5
+Epoch 1
+Train Loss: 0.0188
+Validation AUC: 0.9896
+Best model saved with AUC: 0.9896
+Epoch 2
+Train Loss: 0.0179
+Validation AUC: 0.9915
+Best model saved with AUC: 0.9915
+Epoch 3
+Train Loss: 0.0138
+Validation AUC: 0.9929
+Best model saved with AUC: 0.9929
+Epoch 4
+Train Loss: 0.0133
+Validation AUC: 0.9942
+Best model saved with AUC: 0.9942
+Epoch 5
+Train Loss: 0.0060
+Validation AUC: 0.9944
+Best model saved with AUC: 0.9944
+Epoch 6
+Train Loss: 0.0051
+Validation AUC: 0.9958
+Best model saved with AUC: 0.9958
+Epoch 7
+Train Loss: 0.0119
+Validation AUC: 0.9946
+Epoch 8
+Train Loss: 0.0086
+Validation AUC: 0.9963
+Best model saved with AUC: 0.9963
+Epoch 9
+Train Loss: 0.0157
+Validation AUC: 0.9941
+Epoch 10
+Train Loss: 0.0124
+Validation AUC: 0.9960
+Epoch 11
+Train Loss: 0.0125
+Validation AUC: 0.9957
+Epoch 12
+Train Loss: 0.0146
+Validation AUC: 0.9955
+Early stopping triggered.
+Training completed.
+Loading best model for Fold 1...
+Loading best model for Fold 2...
+Loading best model for Fold 3...
+Loading best model for Fold 4...
+Loading best model for Fold 5...
+=== Test Results ===
+Test Set AUC: 0.7484
+Certainty (Standard Deviation) across folds: 0.09967996925115585
+============================MODEL ResNet34============================
+Starting Fold 1/5
+Epoch 1
+Train Loss: 1.3364
+Validation AUC: 0.7100
+Best model saved with AUC: 0.7100
+Epoch 2
+Train Loss: 1.2147
+Validation AUC: 0.7851
+Best model saved with AUC: 0.7851
+Epoch 3
+Train Loss: 1.1086
+Validation AUC: 0.7759
+Epoch 4
+Train Loss: 1.0260
+Validation AUC: 0.8511
+Best model saved with AUC: 0.8511
+Epoch 5
+Train Loss: 0.9294
+Validation AUC: 0.8469
+Epoch 6
+Train Loss: 0.9058
+Validation AUC: 0.8810
+Best model saved with AUC: 0.8810
+Epoch 7
+Train Loss: 0.8226
+Validation AUC: 0.8891
+Best model saved with AUC: 0.8891
+Epoch 8
+Train Loss: 0.7849
+Validation AUC: 0.9137
+Best model saved with AUC: 0.9137
+Epoch 9
+Train Loss: 0.7405
+Validation AUC: 0.9104
+Epoch 10
+Train Loss: 0.7031
+Validation AUC: 0.9200
+Best model saved with AUC: 0.9200
+Epoch 11
+Train Loss: 0.6357
+Validation AUC: 0.9266
+Best model saved with AUC: 0.9266
+Epoch 12
+Train Loss: 0.6021
+Validation AUC: 0.9401
+Best model saved with AUC: 0.9401
+Epoch 13
+Train Loss: 0.5660
+Validation AUC: 0.9466
+Best model saved with AUC: 0.9466
+Epoch 14
+Train Loss: 0.5349
+Validation AUC: 0.9553
+Best model saved with AUC: 0.9553
+Epoch 15
+Train Loss: 0.4784
+Validation AUC: 0.9638
+Best model saved with AUC: 0.9638
+Epoch 16
+Train Loss: 0.4750
+Validation AUC: 0.9645
+Best model saved with AUC: 0.9645
+Epoch 17
+Train Loss: 0.4176
+Validation AUC: 0.9713
+Best model saved with AUC: 0.9713
+Epoch 18
+Train Loss: 0.3870
+Validation AUC: 0.9741
+Best model saved with AUC: 0.9741
+Epoch 19
+Train Loss: 0.3470
+Validation AUC: 0.9760
+Best model saved with AUC: 0.9760
+Epoch 20
+Train Loss: 0.3395
+Validation AUC: 0.9865
+Best model saved with AUC: 0.9865
+Epoch 21
+Train Loss: 0.3001
+Validation AUC: 0.9834
+Epoch 22
+Train Loss: 0.2907
+Validation AUC: 0.9850
+Epoch 23
+Train Loss: 0.2637
+Validation AUC: 0.9929
+Best model saved with AUC: 0.9929
+Epoch 24
+Train Loss: 0.2379
+Validation AUC: 0.9912
+Epoch 25
+Train Loss: 0.2281
+Validation AUC: 0.9894
+Epoch 26
+Train Loss: 0.2096
+Validation AUC: 0.9938
+Best model saved with AUC: 0.9938
+Epoch 27
+Train Loss: 0.1872
+Validation AUC: 0.9831
+Epoch 28
+Train Loss: 0.1985
+Validation AUC: 0.9902
+Epoch 29
+Train Loss: 0.1579
+Validation AUC: 0.9938
+Best model saved with AUC: 0.9938
+Epoch 30
+Train Loss: 0.1600
+Validation AUC: 0.9940
+Best model saved with AUC: 0.9940
+Epoch 31
+Train Loss: 0.1535
+Validation AUC: 0.9947
+Best model saved with AUC: 0.9947
+Epoch 32
+Train Loss: 0.1531
+Validation AUC: 0.9954
+Best model saved with AUC: 0.9954
+Epoch 33
+Train Loss: 0.1357
+Validation AUC: 0.9961
+Best model saved with AUC: 0.9961
+Epoch 34
+Train Loss: 0.1194
+Validation AUC: 0.9945
+Epoch 35
+Train Loss: 0.1177
+Validation AUC: 0.9981
+Best model saved with AUC: 0.9981
+Epoch 36
+Train Loss: 0.1071
+Validation AUC: 0.9984
+Best model saved with AUC: 0.9984
+Epoch 37
+Train Loss: 0.1044
+Validation AUC: 0.9991
+Best model saved with AUC: 0.9991
+Epoch 38
+Train Loss: 0.0939
+Validation AUC: 0.9967
+Epoch 39
+Train Loss: 0.1043
+Validation AUC: 0.9984
+Epoch 40
+Train Loss: 0.0889
+Validation AUC: 0.9991
+Epoch 41
+Train Loss: 0.0854
+Validation AUC: 0.9979
+Early stopping triggered.
+Starting Fold 2/5
+Epoch 1
+Train Loss: 0.1001
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 2
+Train Loss: 0.0775
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 3
+Train Loss: 0.0832
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 4
+Train Loss: 0.0854
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 5
+Train Loss: 0.0743
+Validation AUC: 0.9999
+Epoch 6
+Train Loss: 0.0703
+Validation AUC: 0.9999
+Epoch 7
+Train Loss: 0.0665
+Validation AUC: 0.9996
+Epoch 8
+Train Loss: 0.0724
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 9
+Train Loss: 0.0576
+Validation AUC: 1.0000
+Epoch 10
+Train Loss: 0.0586
+Validation AUC: 0.9999
+Epoch 11
+Train Loss: 0.0524
+Validation AUC: 0.9999
+Epoch 12
+Train Loss: 0.0641
+Validation AUC: 0.9995
+Early stopping triggered.
+Starting Fold 3/5
+Epoch 1
+Train Loss: 0.0530
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 2
+Train Loss: 0.0450
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 3
+Train Loss: 0.0390
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 4
+Train Loss: 0.0455
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 5
+Train Loss: 0.0359
+Validation AUC: 0.9994
+Epoch 6
+Train Loss: 0.0437
+Validation AUC: 1.0000
+Epoch 7
+Train Loss: 0.0425
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 8
+Train Loss: 0.0403
+Validation AUC: 0.9999
+Epoch 9
+Train Loss: 0.0326
+Validation AUC: 0.9998
+Epoch 10
+Train Loss: 0.0485
+Validation AUC: 0.9998
+Epoch 11
+Train Loss: 0.0399
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 4/5
+Epoch 1
+Train Loss: 0.0394
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0421
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0370
+Validation AUC: 0.9998
+Epoch 4
+Train Loss: 0.0404
+Validation AUC: 0.9999
+Epoch 5
+Train Loss: 0.0320
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 5/5
+Epoch 1
+Train Loss: 0.0303
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0390
+Validation AUC: 0.9998
+Epoch 3
+Train Loss: 0.0373
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0325
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0301
+Validation AUC: 1.0000
+Early stopping triggered.
+Training completed.
+Loading best model for Fold 1...
+Loading best model for Fold 2...
+Loading best model for Fold 3...
+Loading best model for Fold 4...
+Loading best model for Fold 5...
+=== Test Results ===
+Test Set AUC: 0.7213
+Certainty (Standard Deviation) across folds: 0.11063726991415024
+============================MODEL ResNet101============================
+Starting Fold 1/5
+Epoch 1
+Train Loss: 1.3821
+Validation AUC: 0.6546
+Best model saved with AUC: 0.6546
+Epoch 2
+Train Loss: 1.3015
+Validation AUC: 0.7579
+Best model saved with AUC: 0.7579
+Epoch 3
+Train Loss: 1.1746
+Validation AUC: 0.7558
+Epoch 4
+Train Loss: 1.1515
+Validation AUC: 0.8173
+Best model saved with AUC: 0.8173
+Epoch 5
+Train Loss: 1.0774
+Validation AUC: 0.8121
+Epoch 6
+Train Loss: 1.0218
+Validation AUC: 0.8523
+Best model saved with AUC: 0.8523
+Epoch 7
+Train Loss: 0.9264
+Validation AUC: 0.8674
+Best model saved with AUC: 0.8674
+Epoch 8
+Train Loss: 0.8827
+Validation AUC: 0.8776
+Best model saved with AUC: 0.8776
+Epoch 9
+Train Loss: 0.8373
+Validation AUC: 0.8809
+Best model saved with AUC: 0.8809
+Epoch 10
+Train Loss: 0.7979
+Validation AUC: 0.8771
+Epoch 11
+Train Loss: 0.7365
+Validation AUC: 0.9064
+Best model saved with AUC: 0.9064
+Epoch 12
+Train Loss: 0.6745
+Validation AUC: 0.9178
+Best model saved with AUC: 0.9178
+Epoch 13
+Train Loss: 0.6533
+Validation AUC: 0.9318
+Best model saved with AUC: 0.9318
+Epoch 14
+Train Loss: 0.5847
+Validation AUC: 0.9481
+Best model saved with AUC: 0.9481
+Epoch 15
+Train Loss: 0.5607
+Validation AUC: 0.9459
+Epoch 16
+Train Loss: 0.5058
+Validation AUC: 0.9602
+Best model saved with AUC: 0.9602
+Epoch 17
+Train Loss: 0.4483
+Validation AUC: 0.9506
+Epoch 18
+Train Loss: 0.4221
+Validation AUC: 0.9652
+Best model saved with AUC: 0.9652
+Epoch 19
+Train Loss: 0.4010
+Validation AUC: 0.9764
+Best model saved with AUC: 0.9764
+Epoch 20
+Train Loss: 0.3695
+Validation AUC: 0.9785
+Best model saved with AUC: 0.9785
+Epoch 21
+Train Loss: 0.3157
+Validation AUC: 0.9852
+Best model saved with AUC: 0.9852
+Epoch 22
+Train Loss: 0.2888
+Validation AUC: 0.9729
+Epoch 23
+Train Loss: 0.2590
+Validation AUC: 0.9897
+Best model saved with AUC: 0.9897
+Epoch 24
+Train Loss: 0.2241
+Validation AUC: 0.9893
+Epoch 25
+Train Loss: 0.2122
+Validation AUC: 0.9958
+Best model saved with AUC: 0.9958
+Epoch 26
+Train Loss: 0.1839
+Validation AUC: 0.9922
+Epoch 27
+Train Loss: 0.1590
+Validation AUC: 0.9907
+Epoch 28
+Train Loss: 0.1498
+Validation AUC: 0.9951
+Epoch 29
+Train Loss: 0.1478
+Validation AUC: 0.9956
+Early stopping triggered.
+Starting Fold 2/5
+Epoch 1
+Train Loss: 0.1537
+Validation AUC: 0.9983
+Best model saved with AUC: 0.9983
+Epoch 2
+Train Loss: 0.1331
+Validation AUC: 0.9996
+Best model saved with AUC: 0.9996
+Epoch 3
+Train Loss: 0.1235
+Validation AUC: 0.9995
+Epoch 4
+Train Loss: 0.1044
+Validation AUC: 0.9993
+Epoch 5
+Train Loss: 0.1042
+Validation AUC: 0.9969
+Epoch 6
+Train Loss: 0.0998
+Validation AUC: 0.9985
+Early stopping triggered.
+Starting Fold 3/5
+Epoch 1
+Train Loss: 0.1000
+Validation AUC: 0.9996
+Best model saved with AUC: 0.9996
+Epoch 2
+Train Loss: 0.0776
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 3
+Train Loss: 0.0807
+Validation AUC: 0.9997
+Epoch 4
+Train Loss: 0.0781
+Validation AUC: 0.9995
+Epoch 5
+Train Loss: 0.0756
+Validation AUC: 0.9997
+Epoch 6
+Train Loss: 0.0593
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 7
+Train Loss: 0.0698
+Validation AUC: 0.9995
+Epoch 8
+Train Loss: 0.0705
+Validation AUC: 0.9998
+Epoch 9
+Train Loss: 0.0572
+Validation AUC: 0.9998
+Epoch 10
+Train Loss: 0.0679
+Validation AUC: 0.9994
+Early stopping triggered.
+Starting Fold 4/5
+Epoch 1
+Train Loss: 0.0457
+Validation AUC: 0.9996
+Best model saved with AUC: 0.9996
+Epoch 2
+Train Loss: 0.0457
+Validation AUC: 0.9997
+Best model saved with AUC: 0.9997
+Epoch 3
+Train Loss: 0.0417
+Validation AUC: 0.9997
+Epoch 4
+Train Loss: 0.0428
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 5
+Train Loss: 0.0427
+Validation AUC: 0.9999
+Epoch 6
+Train Loss: 0.0321
+Validation AUC: 1.0000
+Epoch 7
+Train Loss: 0.0418
+Validation AUC: 0.9994
+Epoch 8
+Train Loss: 0.0397
+Validation AUC: 0.9999
+Early stopping triggered.
+Starting Fold 5/5
+Epoch 1
+Train Loss: 0.0415
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 2
+Train Loss: 0.0381
+Validation AUC: 0.9999
+Epoch 3
+Train Loss: 0.0327
+Validation AUC: 0.9999
+Epoch 4
+Train Loss: 0.0356
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 5
+Train Loss: 0.0357
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 6
+Train Loss: 0.0258
+Validation AUC: 1.0000
+Epoch 7
+Train Loss: 0.0272
+Validation AUC: 1.0000
+Epoch 8
+Train Loss: 0.0290
+Validation AUC: 0.9999
+Epoch 9
+Train Loss: 0.0320
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 10
+Train Loss: 0.0327
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 11
+Train Loss: 0.0267
+Validation AUC: 1.0000
+Epoch 12
+Train Loss: 0.0330
+Validation AUC: 1.0000
+Epoch 13
+Train Loss: 0.0302
+Validation AUC: 1.0000
+Epoch 14
+Train Loss: 0.0126
+Validation AUC: 1.0000
+Early stopping triggered.
+Training completed.
+Loading best model for Fold 1...
+Loading best model for Fold 2...
+Loading best model for Fold 3...
+Loading best model for Fold 4...
+Loading best model for Fold 5...
+=== Test Results ===
+Test Set AUC: 0.7345
+Certainty (Standard Deviation) across folds: 0.11104588955640793
+============================MODEL InceptionV3============================
+Starting Fold 1/5
+Epoch 1
+Train Loss: 1.1177
+Validation AUC: 0.8999
+Best model saved with AUC: 0.8999
+Epoch 2
+Train Loss: 0.8086
+Validation AUC: 0.9381
+Best model saved with AUC: 0.9381
+Epoch 3
+Train Loss: 0.6299
+Validation AUC: 0.9615
+Best model saved with AUC: 0.9615
+Epoch 4
+Train Loss: 0.4841
+Validation AUC: 0.9734
+Best model saved with AUC: 0.9734
+Epoch 5
+Train Loss: 0.3814
+Validation AUC: 0.9800
+Best model saved with AUC: 0.9800
+Epoch 6
+Train Loss: 0.3065
+Validation AUC: 0.9937
+Best model saved with AUC: 0.9937
+Epoch 7
+Train Loss: 0.2653
+Validation AUC: 0.9920
+Epoch 8
+Train Loss: 0.2417
+Validation AUC: 0.9939
+Best model saved with AUC: 0.9939
+Epoch 9
+Train Loss: 0.2153
+Validation AUC: 0.9960
+Best model saved with AUC: 0.9960
+Epoch 10
+Train Loss: 0.1925
+Validation AUC: 0.9983
+Best model saved with AUC: 0.9983
+Epoch 11
+Train Loss: 0.1805
+Validation AUC: 0.9955
+Epoch 12
+Train Loss: 0.1545
+Validation AUC: 0.9984
+Best model saved with AUC: 0.9984
+Epoch 13
+Train Loss: 0.1340
+Validation AUC: 0.9986
+Best model saved with AUC: 0.9986
+Epoch 14
+Train Loss: 0.1237
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 15
+Train Loss: 0.1047
+Validation AUC: 0.9995
+Epoch 16
+Train Loss: 0.1308
+Validation AUC: 0.9997
+Epoch 17
+Train Loss: 0.1012
+Validation AUC: 0.9994
+Epoch 18
+Train Loss: 0.1021
+Validation AUC: 0.9992
+Early stopping triggered.
+Starting Fold 2/5
+Epoch 1
+Train Loss: 0.1148
+Validation AUC: 0.9992
+Best model saved with AUC: 0.9992
+Epoch 2
+Train Loss: 0.0849
+Validation AUC: 0.9969
+Epoch 3
+Train Loss: 0.0882
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 4
+Train Loss: 0.0646
+Validation AUC: 0.9987
+Epoch 5
+Train Loss: 0.0733
+Validation AUC: 0.9997
+Epoch 6
+Train Loss: 0.0623
+Validation AUC: 0.9993
+Epoch 7
+Train Loss: 0.0602
+Validation AUC: 0.9997
+Early stopping triggered.
+Starting Fold 3/5
+Epoch 1
+Train Loss: 0.0549
+Validation AUC: 0.9990
+Best model saved with AUC: 0.9990
+Epoch 2
+Train Loss: 0.0718
+Validation AUC: 0.9993
+Best model saved with AUC: 0.9993
+Epoch 3
+Train Loss: 0.0595
+Validation AUC: 0.9985
+Epoch 4
+Train Loss: 0.0638
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 5
+Train Loss: 0.0680
+Validation AUC: 0.9999
+Epoch 6
+Train Loss: 0.0515
+Validation AUC: 0.9978
+Epoch 7
+Train Loss: 0.0462
+Validation AUC: 0.9997
+Epoch 8
+Train Loss: 0.0498
+Validation AUC: 0.9998
+Early stopping triggered.
+Starting Fold 4/5
+Epoch 1
+Train Loss: 0.0529
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0509
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0411
+Validation AUC: 0.9978
+Epoch 4
+Train Loss: 0.0449
+Validation AUC: 0.9991
+Epoch 5
+Train Loss: 0.0513
+Validation AUC: 0.9987
+Early stopping triggered.
+Starting Fold 5/5
+Epoch 1
+Train Loss: 0.0358
+Validation AUC: 0.9970
+Best model saved with AUC: 0.9970
+Epoch 2
+Train Loss: 0.0367
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 3
+Train Loss: 0.0455
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0556
+Validation AUC: 0.9996
+Epoch 5
+Train Loss: 0.0489
+Validation AUC: 0.9997
+Epoch 6
+Train Loss: 0.0424
+Validation AUC: 0.9985
+Early stopping triggered.
+Training completed.
+Loading best model for Fold 1...
+Loading best model for Fold 2...
+Loading best model for Fold 3...
+Loading best model for Fold 4...
+Loading best model for Fold 5...
+=== Test Results ===
+Test Set AUC: 0.7516
+Certainty (Standard Deviation) across folds: 0.11158740520477295
+{'EfficentNetB4': {'AUC': 0.7483546144289843, 'Certainty': 0.09967997},
+'ResNet34': {'AUC': 0.7213271676135727, 'Certainty': 0.11063727},
+'ResNet101': {'AUC': 0.7344733264358919, 'Certainty': 0.11104589},
+ 'InceptionV3': {'AUC': 0.751568226114101, 'Certainty': 0.111587405}}

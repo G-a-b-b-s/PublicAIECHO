@@ -1,0 +1,284 @@
+t0003
+t0003
+t0003
+t0003
+t0003
+t0003
+t0003
+t0003
+t0003
+t0003
+
+Modules based on Lua: Version 8.5.8  2021-06-30 14:16 -05:00
+    by Robert McLay mclay@tacc.utexas.edu
+
+module [options] sub-command [args ...]
+
+Help sub-commands:
+------------------
+  help                              prints this message
+  help                module [...]  print help message from module(s)
+
+Loading/Unloading sub-commands:
+-------------------------------
+  load | add          module [...]  load module(s)
+  try-load | try-add  module [...]  Add module(s), do not complain if not
+                                    found
+  del | unload        module [...]  Remove module(s), do not complain if not
+                                    found
+  swap | sw | switch  m1 m2         unload m1 and load m2
+  purge                             unload all modules
+  refresh                           reload aliases from current list of
+                                    modules.
+  update                            reload all currently loaded modules.
+
+Listing / Searching sub-commands:
+---------------------------------
+  list                              List loaded modules
+  list                s1 s2 ...     List loaded modules that match the
+                                    pattern
+  avail | av                        List available modules
+  avail | av          string        List available modules that contain
+                                    "string".
+  spider                            List all possible modules
+  spider              module        List all possible version of that module
+                                    file
+  spider              string        List all module that contain the
+                                    "string".
+  spider              name/version  Detailed information about that version
+                                    of the module.
+  whatis              module        Print whatis information about module
+  keyword | key       string        Search all name and whatis that contain
+                                    "string".
+
+Searching with Lmod:
+--------------------
+  All searching (spider, list, avail, keyword) support regular expressions:
+  
+
+  -r spider           '^p'          Finds all the modules that start with
+                                    `p' or `P'
+  -r spider           mpi           Finds all modules that have "mpi" in
+                                    their name.
+  -r spider           'mpi$         Finds all modules that end with "mpi" in
+                                    their name.
+
+Handling a collection of modules:
+--------------------------------
+  save | s                          Save the current list of modules to a
+                                    user defined "default" collection.
+  save | s            name          Save the current list of modules to
+                                    "name" collection.
+  reset                             The same as "restore system"
+  restore | r                       Restore modules from the user's
+                                    "default" or system default.
+  restore | r         name          Restore modules from "name" collection.
+  restore             system        Restore module state to system defaults.
+  savelist                          List of saved collections.
+  describe | mcc      name          Describe the contents of a module
+                                    collection.
+  disable             name          Disable (i.e. remove) a collection.
+
+Deprecated commands:
+--------------------
+  getdefault          [name]        load name collection of modules or
+                                    user's "default" if no name given.
+                                    ===> Use "restore" instead <====
+  setdefault          [name]        Save current list of modules to name if
+                                    given, otherwise save as the default
+                                    list for you the user.
+                                    ===> Use "save" instead. <====
+
+Miscellaneous sub-commands:
+---------------------------
+  is-loaded           modulefile    return a true status if module is loaded
+  is-avail            modulefile    return a true status if module can be
+                                    loaded
+  show                modulefile    show the commands in the module file.
+  use [-a]            path          Prepend or Append path to MODULEPATH.
+  unuse               path          remove path from MODULEPATH.
+  tablelist                         output list of active modules as a lua
+                                    table.
+
+Important Environment Variables:
+--------------------------------
+  LMOD_COLORIZE                     If defined to be "YES" then Lmod prints
+                                    properties and warning in color.
+
+    --------------------------------------------------------------------------
+
+Lmod Web Sites
+
+  Documentation:    http://lmod.readthedocs.org
+  GitHub:           https://github.com/TACC/Lmod
+  SourceForge:      https://lmod.sf.net
+  TACC Homepage:    https://www.tacc.utexas.edu/research-development/tacc-projects/lmod
+
+  To report a bug please read http://lmod.readthedocs.io/en/latest/075_bug_reporting.html
+    --------------------------------------------------------------------------
+
+
+INFO:root:Number of training samples: 3768
+INFO:root:Number of test samples: 766
+/net/people/plgrid/plggabcza/.local/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/net/people/plgrid/plggabcza/.local/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+Starting Fold 1/5
+Epoch 1
+Train Loss: 1.1685
+Validation AUC: 0.7740
+Best model saved with AUC: 0.7740
+Epoch 2
+Train Loss: 0.9637
+Validation AUC: 0.8893
+Best model saved with AUC: 0.8893
+Epoch 3
+Train Loss: 0.5588
+Validation AUC: 0.9331
+Best model saved with AUC: 0.9331
+Epoch 4
+Train Loss: 0.2536
+Validation AUC: 0.9636
+Best model saved with AUC: 0.9636
+Epoch 5
+Train Loss: 0.1427
+Validation AUC: 0.9755
+Best model saved with AUC: 0.9755
+Epoch 6
+Train Loss: 0.1044
+Validation AUC: 0.9813
+Best model saved with AUC: 0.9813
+Epoch 7
+Train Loss: 0.0883
+Validation AUC: 0.9838
+Best model saved with AUC: 0.9838
+Epoch 8
+Train Loss: 0.0713
+Validation AUC: 0.9841
+Best model saved with AUC: 0.9841
+Epoch 9
+Train Loss: 0.0806
+Validation AUC: 0.9820
+Epoch 10
+Train Loss: 0.0669
+Validation AUC: 0.9852
+Best model saved with AUC: 0.9852
+Epoch 11
+Train Loss: 0.0632
+Validation AUC: 0.9825
+Epoch 12
+Train Loss: 0.0745
+Validation AUC: 0.9899
+Best model saved with AUC: 0.9899
+Epoch 13
+Train Loss: 0.0523
+Validation AUC: 0.9893
+Epoch 14
+Train Loss: 0.0504
+Validation AUC: 0.9932
+Best model saved with AUC: 0.9932
+Epoch 15
+Train Loss: 0.0379
+Validation AUC: 0.9919
+Epoch 16
+Train Loss: 0.0456
+Validation AUC: 0.9906
+Epoch 17
+Train Loss: 0.0355
+Validation AUC: 0.9933
+Best model saved with AUC: 0.9933
+Epoch 18
+Train Loss: 0.0397
+Validation AUC: 0.9885
+Epoch 19
+Train Loss: 0.0398
+Validation AUC: 0.9930
+Epoch 20
+Train Loss: 0.0369
+Validation AUC: 0.9800
+Epoch 21
+Train Loss: 0.0308
+Validation AUC: 0.9932
+Early stopping triggered.
+Starting Fold 2/5
+Epoch 1
+Train Loss: 0.1337
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0569
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0516
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0326
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0388
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 3/5
+Epoch 1
+Train Loss: 0.0289
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0294
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0250
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0231
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0200
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 4/5
+Epoch 1
+Train Loss: 0.0248
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0232
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0125
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0236
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0199
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 5/5
+Epoch 1
+Train Loss: 0.0255
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0185
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0255
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0309
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0171
+Validation AUC: 1.0000
+Early stopping triggered.
+Training completed.
+Loading best model for Fold 1...
+Loading best model for Fold 2...
+Loading best model for Fold 3...
+Loading best model for Fold 4...
+Loading best model for Fold 5...
+=== Test Results ===
+Test Set AUC: 0.7056
+Certainty (Standard Deviation) across folds: 0.13667172193527222

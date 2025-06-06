@@ -1,0 +1,416 @@
+t0033
+t0033
+t0033
+t0033
+t0033
+t0033
+t0033
+t0033
+t0033
+t0033
+
+Modules based on Lua: Version 8.5.8  2021-06-30 14:16 -05:00
+    by Robert McLay mclay@tacc.utexas.edu
+
+module [options] sub-command [args ...]
+
+Help sub-commands:
+------------------
+  help                              prints this message
+  help                module [...]  print help message from module(s)
+
+Loading/Unloading sub-commands:
+-------------------------------
+  load | add          module [...]  load module(s)
+  try-load | try-add  module [...]  Add module(s), do not complain if not
+                                    found
+  del | unload        module [...]  Remove module(s), do not complain if not
+                                    found
+  swap | sw | switch  m1 m2         unload m1 and load m2
+  purge                             unload all modules
+  refresh                           reload aliases from current list of
+                                    modules.
+  update                            reload all currently loaded modules.
+
+Listing / Searching sub-commands:
+---------------------------------
+  list                              List loaded modules
+  list                s1 s2 ...     List loaded modules that match the
+                                    pattern
+  avail | av                        List available modules
+  avail | av          string        List available modules that contain
+                                    "string".
+  spider                            List all possible modules
+  spider              module        List all possible version of that module
+                                    file
+  spider              string        List all module that contain the
+                                    "string".
+  spider              name/version  Detailed information about that version
+                                    of the module.
+  whatis              module        Print whatis information about module
+  keyword | key       string        Search all name and whatis that contain
+                                    "string".
+
+Searching with Lmod:
+--------------------
+  All searching (spider, list, avail, keyword) support regular expressions:
+  
+
+  -r spider           '^p'          Finds all the modules that start with
+                                    `p' or `P'
+  -r spider           mpi           Finds all modules that have "mpi" in
+                                    their name.
+  -r spider           'mpi$         Finds all modules that end with "mpi" in
+                                    their name.
+
+Handling a collection of modules:
+--------------------------------
+  save | s                          Save the current list of modules to a
+                                    user defined "default" collection.
+  save | s            name          Save the current list of modules to
+                                    "name" collection.
+  reset                             The same as "restore system"
+  restore | r                       Restore modules from the user's
+                                    "default" or system default.
+  restore | r         name          Restore modules from "name" collection.
+  restore             system        Restore module state to system defaults.
+  savelist                          List of saved collections.
+  describe | mcc      name          Describe the contents of a module
+                                    collection.
+  disable             name          Disable (i.e. remove) a collection.
+
+Deprecated commands:
+--------------------
+  getdefault          [name]        load name collection of modules or
+                                    user's "default" if no name given.
+                                    ===> Use "restore" instead <====
+  setdefault          [name]        Save current list of modules to name if
+                                    given, otherwise save as the default
+                                    list for you the user.
+                                    ===> Use "save" instead. <====
+
+Miscellaneous sub-commands:
+---------------------------
+  is-loaded           modulefile    return a true status if module is loaded
+  is-avail            modulefile    return a true status if module can be
+                                    loaded
+  show                modulefile    show the commands in the module file.
+  use [-a]            path          Prepend or Append path to MODULEPATH.
+  unuse               path          remove path from MODULEPATH.
+  tablelist                         output list of active modules as a lua
+                                    table.
+
+Important Environment Variables:
+--------------------------------
+  LMOD_COLORIZE                     If defined to be "YES" then Lmod prints
+                                    properties and warning in color.
+
+    --------------------------------------------------------------------------
+
+Lmod Web Sites
+
+  Documentation:    http://lmod.readthedocs.org
+  GitHub:           https://github.com/TACC/Lmod
+  SourceForge:      https://lmod.sf.net
+  TACC Homepage:    https://www.tacc.utexas.edu/research-development/tacc-projects/lmod
+
+  To report a bug please read http://lmod.readthedocs.io/en/latest/075_bug_reporting.html
+    --------------------------------------------------------------------------
+
+
+INFO:timm.models._builder:Loading pretrained weights from Hugging Face hub (timm/resnet18.a1_in1k)
+INFO:timm.models._hub:[timm/resnet18.a1_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+INFO:timm.models._builder:Converted input conv conv1 pretrained weights from 3 to 30 channel(s)
+INFO:timm.models._builder:Missing keys (fc.weight, fc.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+============================MODEL ResNet18============================
+Starting Fold 1/5
+Epoch 1
+Train Loss: 1.3463
+Validation AUC: 0.7078
+Best model saved with AUC: 0.7078
+Epoch 2
+Train Loss: 1.2209
+Validation AUC: 0.7582
+Best model saved with AUC: 0.7582
+Epoch 3
+Train Loss: 1.1154
+Validation AUC: 0.8010
+Best model saved with AUC: 0.8010
+Epoch 4
+Train Loss: 1.0852
+Validation AUC: 0.8266
+Best model saved with AUC: 0.8266
+Epoch 5
+Train Loss: 1.0105
+Validation AUC: 0.8362
+Best model saved with AUC: 0.8362
+Epoch 6
+Train Loss: 0.9491
+Validation AUC: 0.8564
+Best model saved with AUC: 0.8564
+Epoch 7
+Train Loss: 0.8878
+Validation AUC: 0.8576
+Best model saved with AUC: 0.8576
+Epoch 8
+Train Loss: 0.8895
+Validation AUC: 0.8863
+Best model saved with AUC: 0.8863
+Epoch 9
+Train Loss: 0.8220
+Validation AUC: 0.9010
+Best model saved with AUC: 0.9010
+Epoch 10
+Train Loss: 0.7742
+Validation AUC: 0.9075
+Best model saved with AUC: 0.9075
+Epoch 11
+Train Loss: 0.7361
+Validation AUC: 0.9145
+Best model saved with AUC: 0.9145
+Epoch 12
+Train Loss: 0.7175
+Validation AUC: 0.9078
+Epoch 13
+Train Loss: 0.6562
+Validation AUC: 0.9213
+Best model saved with AUC: 0.9213
+Epoch 14
+Train Loss: 0.6762
+Validation AUC: 0.9182
+Epoch 15
+Train Loss: 0.6119
+Validation AUC: 0.9318
+Best model saved with AUC: 0.9318
+Epoch 16
+Train Loss: 0.6038
+Validation AUC: 0.9292
+Epoch 17
+Train Loss: 0.5687
+Validation AUC: 0.9246
+Epoch 18
+Train Loss: 0.5280
+Validation AUC: 0.9477
+Best model saved with AUC: 0.9477
+Epoch 19
+Train Loss: 0.4975
+Validation AUC: 0.9464
+Epoch 20
+Train Loss: 0.4632
+Validation AUC: 0.9611
+Best model saved with AUC: 0.9611
+Epoch 21
+Train Loss: 0.4189
+Validation AUC: 0.9611
+Epoch 22
+Train Loss: 0.4211
+Validation AUC: 0.9647
+Best model saved with AUC: 0.9647
+Epoch 23
+Train Loss: 0.3968
+Validation AUC: 0.9637
+Epoch 24
+Train Loss: 0.3895
+Validation AUC: 0.9747
+Best model saved with AUC: 0.9747
+Epoch 25
+Train Loss: 0.3756
+Validation AUC: 0.9647
+Epoch 26
+Train Loss: 0.3525
+Validation AUC: 0.9720
+Epoch 27
+Train Loss: 0.3106
+Validation AUC: 0.9757
+Best model saved with AUC: 0.9757
+Epoch 28
+Train Loss: 0.3098
+Validation AUC: 0.9828
+Best model saved with AUC: 0.9828
+Epoch 29
+Train Loss: 0.2912
+Validation AUC: 0.9822
+Epoch 30
+Train Loss: 0.2797
+Validation AUC: 0.9807
+Epoch 31
+Train Loss: 0.2517
+Validation AUC: 0.9846
+Best model saved with AUC: 0.9846
+Epoch 32
+Train Loss: 0.2527
+Validation AUC: 0.9836
+Epoch 33
+Train Loss: 0.2295
+Validation AUC: 0.9849
+Best model saved with AUC: 0.9849
+Epoch 34
+Train Loss: 0.2241
+Validation AUC: 0.9881
+Best model saved with AUC: 0.9881
+Epoch 35
+Train Loss: 0.2152
+Validation AUC: 0.9856
+Epoch 36
+Train Loss: 0.2133
+Validation AUC: 0.9888
+Best model saved with AUC: 0.9888
+Epoch 37
+Train Loss: 0.1944
+Validation AUC: 0.9921
+Best model saved with AUC: 0.9921
+Epoch 38
+Train Loss: 0.1789
+Validation AUC: 0.9895
+Epoch 39
+Train Loss: 0.1682
+Validation AUC: 0.9891
+Epoch 40
+Train Loss: 0.1599
+Validation AUC: 0.9906
+Epoch 41
+Train Loss: 0.1587
+Validation AUC: 0.9945
+Best model saved with AUC: 0.9945
+Epoch 42
+Train Loss: 0.1397
+Validation AUC: 0.9939
+Epoch 43
+Train Loss: 0.1395
+Validation AUC: 0.9932
+Epoch 44
+Train Loss: 0.1374
+Validation AUC: 0.9940
+Epoch 45
+Train Loss: 0.1498
+Validation AUC: 0.9950
+Best model saved with AUC: 0.9950
+Epoch 46
+Train Loss: 0.1230
+Validation AUC: 0.9965
+Best model saved with AUC: 0.9965
+Epoch 47
+Train Loss: 0.1195
+Validation AUC: 0.9940
+Epoch 48
+Train Loss: 0.1146
+Validation AUC: 0.9937
+Epoch 49
+Train Loss: 0.1128
+Validation AUC: 0.9964
+Epoch 50
+Train Loss: 0.1150
+Validation AUC: 0.9966
+Best model saved with AUC: 0.9966
+Starting Fold 2/5
+Epoch 1
+Train Loss: 0.1232
+Validation AUC: 0.9985
+Best model saved with AUC: 0.9985
+Epoch 2
+Train Loss: 0.1304
+Validation AUC: 0.9995
+Best model saved with AUC: 0.9995
+Epoch 3
+Train Loss: 0.1093
+Validation AUC: 0.9986
+Epoch 4
+Train Loss: 0.1095
+Validation AUC: 0.9995
+Epoch 5
+Train Loss: 0.1002
+Validation AUC: 0.9976
+Epoch 6
+Train Loss: 0.1001
+Validation AUC: 0.9994
+Early stopping triggered.
+Starting Fold 3/5
+Epoch 1
+Train Loss: 0.0993
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 2
+Train Loss: 0.0894
+Validation AUC: 0.9995
+Epoch 3
+Train Loss: 0.0745
+Validation AUC: 0.9997
+Epoch 4
+Train Loss: 0.0873
+Validation AUC: 0.9996
+Epoch 5
+Train Loss: 0.0753
+Validation AUC: 0.9992
+Early stopping triggered.
+Starting Fold 4/5
+Epoch 1
+Train Loss: 0.0766
+Validation AUC: 0.9997
+Best model saved with AUC: 0.9997
+Epoch 2
+Train Loss: 0.0724
+Validation AUC: 0.9997
+Epoch 3
+Train Loss: 0.0811
+Validation AUC: 0.9994
+Epoch 4
+Train Loss: 0.0683
+Validation AUC: 0.9997
+Best model saved with AUC: 0.9997
+Epoch 5
+Train Loss: 0.0607
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 6
+Train Loss: 0.0619
+Validation AUC: 0.9992
+Epoch 7
+Train Loss: 0.0641
+Validation AUC: 0.9993
+Epoch 8
+Train Loss: 0.0632
+Validation AUC: 0.9986
+Epoch 9
+Train Loss: 0.0586
+Validation AUC: 0.9997
+Early stopping triggered.
+Starting Fold 5/5
+Epoch 1
+Train Loss: 0.0669
+Validation AUC: 0.9995
+Best model saved with AUC: 0.9995
+Epoch 2
+Train Loss: 0.0571
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 3
+Train Loss: 0.0511
+Validation AUC: 0.9998
+Best model saved with AUC: 0.9998
+Epoch 4
+Train Loss: 0.0550
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 5
+Train Loss: 0.0534
+Validation AUC: 0.9994
+Epoch 6
+Train Loss: 0.0508
+Validation AUC: 0.9999
+Epoch 7
+Train Loss: 0.0592
+Validation AUC: 1.0000
+Epoch 8
+Train Loss: 0.0624
+Validation AUC: 0.9999
+Early stopping triggered.
+Training completed.
+Loading best model for Fold 1...
+Loading best model for Fold 2...
+Loading best model for Fold 3...
+Loading best model for Fold 4...
+Loading best model for Fold 5...
+=== Test Results ===
+Test Set AUC: 0.7537
+Certainty (Standard Deviation) across folds: 0.11254017055034637
+{'ResNet18': {'AUC': 0.7536671440068374, 'Certainty': 0.11254017}}

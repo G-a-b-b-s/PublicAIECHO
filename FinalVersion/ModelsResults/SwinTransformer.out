@@ -1,0 +1,302 @@
+t0002
+t0002
+t0002
+t0002
+t0002
+t0002
+t0002
+t0002
+t0002
+t0002
+
+Modules based on Lua: Version 8.5.8  2021-06-30 14:16 -05:00
+    by Robert McLay mclay@tacc.utexas.edu
+
+module [options] sub-command [args ...]
+
+Help sub-commands:
+------------------
+  help                              prints this message
+  help                module [...]  print help message from module(s)
+
+Loading/Unloading sub-commands:
+-------------------------------
+  load | add          module [...]  load module(s)
+  try-load | try-add  module [...]  Add module(s), do not complain if not
+                                    found
+  del | unload        module [...]  Remove module(s), do not complain if not
+                                    found
+  swap | sw | switch  m1 m2         unload m1 and load m2
+  purge                             unload all modules
+  refresh                           reload aliases from current list of
+                                    modules.
+  update                            reload all currently loaded modules.
+
+Listing / Searching sub-commands:
+---------------------------------
+  list                              List loaded modules
+  list                s1 s2 ...     List loaded modules that match the
+                                    pattern
+  avail | av                        List available modules
+  avail | av          string        List available modules that contain
+                                    "string".
+  spider                            List all possible modules
+  spider              module        List all possible version of that module
+                                    file
+  spider              string        List all module that contain the
+                                    "string".
+  spider              name/version  Detailed information about that version
+                                    of the module.
+  whatis              module        Print whatis information about module
+  keyword | key       string        Search all name and whatis that contain
+                                    "string".
+
+Searching with Lmod:
+--------------------
+  All searching (spider, list, avail, keyword) support regular expressions:
+  
+
+  -r spider           '^p'          Finds all the modules that start with
+                                    `p' or `P'
+  -r spider           mpi           Finds all modules that have "mpi" in
+                                    their name.
+  -r spider           'mpi$         Finds all modules that end with "mpi" in
+                                    their name.
+
+Handling a collection of modules:
+--------------------------------
+  save | s                          Save the current list of modules to a
+                                    user defined "default" collection.
+  save | s            name          Save the current list of modules to
+                                    "name" collection.
+  reset                             The same as "restore system"
+  restore | r                       Restore modules from the user's
+                                    "default" or system default.
+  restore | r         name          Restore modules from "name" collection.
+  restore             system        Restore module state to system defaults.
+  savelist                          List of saved collections.
+  describe | mcc      name          Describe the contents of a module
+                                    collection.
+  disable             name          Disable (i.e. remove) a collection.
+
+Deprecated commands:
+--------------------
+  getdefault          [name]        load name collection of modules or
+                                    user's "default" if no name given.
+                                    ===> Use "restore" instead <====
+  setdefault          [name]        Save current list of modules to name if
+                                    given, otherwise save as the default
+                                    list for you the user.
+                                    ===> Use "save" instead. <====
+
+Miscellaneous sub-commands:
+---------------------------
+  is-loaded           modulefile    return a true status if module is loaded
+  is-avail            modulefile    return a true status if module can be
+                                    loaded
+  show                modulefile    show the commands in the module file.
+  use [-a]            path          Prepend or Append path to MODULEPATH.
+  unuse               path          remove path from MODULEPATH.
+  tablelist                         output list of active modules as a lua
+                                    table.
+
+Important Environment Variables:
+--------------------------------
+  LMOD_COLORIZE                     If defined to be "YES" then Lmod prints
+                                    properties and warning in color.
+
+    --------------------------------------------------------------------------
+
+Lmod Web Sites
+
+  Documentation:    http://lmod.readthedocs.org
+  GitHub:           https://github.com/TACC/Lmod
+  SourceForge:      https://lmod.sf.net
+  TACC Homepage:    https://www.tacc.utexas.edu/research-development/tacc-projects/lmod
+
+  To report a bug please read http://lmod.readthedocs.io/en/latest/075_bug_reporting.html
+    --------------------------------------------------------------------------
+
+
+INFO:root:Number of training samples: 3768
+INFO:root:Number of test samples: 766
+/net/people/plgrid/plggabcza/.local/lib/python3.9/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/net/people/plgrid/plggabcza/.local/lib/python3.9/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=Swin_T_Weights.IMAGENET1K_V1`. You can also use `weights=Swin_T_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Downloading: "https://download.pytorch.org/models/swin_t-704ceda3.pth" to /net/people/plgrid/plggabcza/.cache/torch/hub/checkpoints/swin_t-704ceda3.pth
+  0%|          | 0.00/108M [00:00<?, ?B/s]  0%|          | 440k/108M [00:00<00:25, 4.44MB/s]  8%|▊         | 9.04M/108M [00:00<00:01, 54.6MB/s] 25%|██▍       | 26.9M/108M [00:00<00:00, 115MB/s]  41%|████▏     | 44.7M/108M [00:00<00:00, 143MB/s] 58%|█████▊    | 62.8M/108M [00:00<00:00, 160MB/s] 74%|███████▍  | 80.3M/108M [00:00<00:00, 168MB/s] 90%|█████████ | 97.6M/108M [00:00<00:00, 172MB/s]100%|██████████| 108M/108M [00:00<00:00, 149MB/s] 
+[1.50961538 0.68759124 0.74290221 1.86166008]
+Starting Fold 1/5
+Epoch 1
+Train Loss: 1.2829
+Validation AUC: 0.7994
+Best model saved with AUC: 0.7994
+Epoch 2
+Train Loss: 1.0734
+Validation AUC: 0.9202
+Best model saved with AUC: 0.9202
+Epoch 3
+Train Loss: 0.7085
+Validation AUC: 0.9784
+Best model saved with AUC: 0.9784
+Epoch 4
+Train Loss: 0.4471
+Validation AUC: 0.9942
+Best model saved with AUC: 0.9942
+Epoch 5
+Train Loss: 0.2963
+Validation AUC: 0.9982
+Best model saved with AUC: 0.9982
+Epoch 6
+Train Loss: 0.2062
+Validation AUC: 0.9989
+Best model saved with AUC: 0.9989
+Epoch 7
+Train Loss: 0.1603
+Validation AUC: 0.9991
+Best model saved with AUC: 0.9991
+Epoch 8
+Train Loss: 0.1246
+Validation AUC: 0.9992
+Best model saved with AUC: 0.9992
+Epoch 9
+Train Loss: 0.1077
+Validation AUC: 0.9991
+Epoch 10
+Train Loss: 0.1093
+Validation AUC: 0.9996
+Best model saved with AUC: 0.9996
+Epoch 11
+Train Loss: 0.0798
+Validation AUC: 0.9994
+Epoch 12
+Train Loss: 0.0802
+Validation AUC: 0.9997
+Best model saved with AUC: 0.9997
+Epoch 13
+Train Loss: 0.0696
+Validation AUC: 0.9996
+Epoch 14
+Train Loss: 0.0721
+Validation AUC: 0.9996
+Epoch 15
+Train Loss: 0.0622
+Validation AUC: 0.9997
+Epoch 16
+Train Loss: 0.0606
+Validation AUC: 0.9999
+Best model saved with AUC: 0.9999
+Epoch 17
+Train Loss: 0.0318
+Validation AUC: 0.9999
+Epoch 18
+Train Loss: 0.0448
+Validation AUC: 0.9997
+Epoch 19
+Train Loss: 0.0454
+Validation AUC: 0.9998
+Epoch 20
+Train Loss: 0.0287
+Validation AUC: 0.9995
+Early stopping triggered.
+Starting Fold 2/5
+Epoch 1
+Train Loss: 0.0730
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0543
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0405
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0380
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0307
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 3/5
+Epoch 1
+Train Loss: 0.0286
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0195
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0403
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0301
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0415
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 4/5
+Epoch 1
+Train Loss: 0.0276
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0314
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0228
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0256
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0243
+Validation AUC: 1.0000
+Early stopping triggered.
+Starting Fold 5/5
+Epoch 1
+Train Loss: 0.0243
+Validation AUC: 1.0000
+Best model saved with AUC: 1.0000
+Epoch 2
+Train Loss: 0.0227
+Validation AUC: 1.0000
+Epoch 3
+Train Loss: 0.0203
+Validation AUC: 1.0000
+Epoch 4
+Train Loss: 0.0189
+Validation AUC: 1.0000
+Epoch 5
+Train Loss: 0.0225
+Validation AUC: 1.0000
+Early stopping triggered.
+Training completed.
+Loading best model for Fold 1...
+Loading best model for Fold 2...
+Loading best model for Fold 3...
+Loading best model for Fold 4...
+Loading best model for Fold 5...
+
+=== Confusion Matrix ===
+[[ 46  18   8   3]
+ [ 16 234  64  39]
+ [  2  58 110  41]
+ [  2  72  32  21]]
+
+=== Classification Report ===
+              precision    recall  f1-score   support
+
+      Normal       0.70      0.61      0.65        75
+       HFrEF       0.61      0.66      0.64       353
+       HFpEF       0.51      0.52      0.52       211
+      HFmrEF       0.20      0.17      0.18       127
+
+    accuracy                           0.54       766
+   macro avg       0.51      0.49      0.50       766
+weighted avg       0.53      0.54      0.53       766
+
+=== Test Results ===
+Test Set AUC: 0.6683
+Certainty (Standard Deviation) across folds: 0.0962115153670311
